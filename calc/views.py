@@ -7,4 +7,9 @@ def add(request):
     c = int(a) + int(b)
     return HttpResponse(str(c))
 
+def addOptimize(request, a, b):
+    c = int(a) + int(b)
+    return HttpResponse(str(c));
+
+
 # Create your views here.
