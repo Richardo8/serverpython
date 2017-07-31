@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+def index(request):
+    return render(request, 'home.html')
+
 def add(request):
     a = request.GET.get('a', 0)
     b = request.GET.get('b', 0)

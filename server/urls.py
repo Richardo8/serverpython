@@ -19,7 +19,7 @@ from learn import views as learn_views
 from calc import views as calc_views
 
 urlpatterns = [
-    url(r'^$', learn_views.index),
+    url(r'^$', calc_views.index, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^add/$', calc_views.add, name='add'),
     url(r'^addOptimize/(\d+)/(\d+)/$', calc_views.addOptimize, name='addOptimize'),
