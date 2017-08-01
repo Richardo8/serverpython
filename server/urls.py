@@ -17,10 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from learn import views as learn_views
 from calc import views as calc_views
+from userlist import views as userlist_views
 
 urlpatterns = [
     url(r'^$', calc_views.index, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^add/$', calc_views.add, name='add'),
     url(r'^addOptimize/(\d+)/(\d+)/$', calc_views.addOptimize, name='addOptimize'),
+    url(r'^userlist', userlist_views.readFile, name='readfile')
 ]
