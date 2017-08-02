@@ -12,5 +12,16 @@ class UserList(models.Model):
     latest = models.CharField(max_length=30)
     identity = models.CharField(max_length=30)
 
-
+    # def __str__(self):
+    #     return ({
+    #         'uid': self.uid,
+    #         'nick': self.nick,
+    #         'name': self.name,
+    #         'sex': self.sex,
+    #         'phone': self.phone,
+    #         'birthday': self.birthday,
+    #         'address': self.address,
+    #         'latest': self.latest,
+    #         'identity': self.identity
+    #     })
 # Create your models here.
