@@ -24,5 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^add/$', calc_views.add, name='add'),
     url(r'^addOptimize/(\d+)/(\d+)/$', calc_views.addOptimize, name='addOptimize'),
-    url(r'^userlist', userlist_views.getAllUser, name='readfile')
+    url(r'^userlist', userlist_views.getAllUser, name='readfile'),
+    url(r'^search', userlist_views.search, name='search'),
+
 ]

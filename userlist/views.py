@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from userlist.models import UserList
 from django.core import serializers
+from django.forms.models import model_to_dict
 import json
+
 
 from django.forms.models import model_to_dict
 
@@ -29,5 +31,14 @@ def getAllUser(request):
     # returnData = serializers.serialize('json', userlist)
     return HttpResponse(returnList_json, content_type="application/json")
 
+def search(request):
+    searchBody = json.loads(request.body)
+    searchResult = UserList.objects.get(name=searchBody['name'])
+    # 先将querySet实例转化成dict
+    searchResult_dict = model_to_dict(searchResult)
+    # 然后将dict转化成json，最后返回
+    searchResult_return = json.dumps(searchResult_dict)
+    print(searchResult_return)
+    return HttpResponse(searchResult_return, content_type="application/json")
 
 # Create your views here.
