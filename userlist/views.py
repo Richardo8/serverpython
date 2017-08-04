@@ -42,19 +42,17 @@ def search(request):
     # print(searchResult_return)
 
     searchMore = UserList.objects.filter(name=searchBody['name'])
-    print(searchMore)
     returnList = []
     for e in searchMore:
-        print(e.uid)
         data = {
             "uid": e.uid,
             "nick": e.nick,
             "name": e.name,
             "sex": e.sex,
             "phone": e.phone,
-            "birthday": e.birthday,
+            "birthday": e.birthday.strftime("%Y-%m-%d"),
             "address": e.address,
-            "latest": e.latest,
+            "latest": e.latest.strftime("%Y-%m-%d %H:%M:%S"),
             "identity": e.identity
         }
         returnList.append(data)
