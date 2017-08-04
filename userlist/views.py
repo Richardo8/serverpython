@@ -12,16 +12,16 @@ def getAllUser(request):
     userlist = UserList.objects.all()
     returnList = []
     for e in userlist:
-        print(e.uid)
+        # strftime("%Y-%m-%d")可以将date类型数据转换成字符串类型
         data = {
             "uid": e.uid,
             "nick": e.nick,
             "name": e.name,
             "sex": e.sex,
             "phone": e.phone,
-            "birthday": e.birthday,
+            "birthday": e.birthday.strftime("%Y-%m-%d"),
             "address": e.address,
-            "latest": e.latest,
+            "latest": e.latest.strftime("%Y-%m-%d %H:%M:%S"),
             "identity": e.identity
         }
         returnList.append(data)
