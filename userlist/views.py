@@ -41,11 +41,10 @@ def search(request):
     # searchResult_return = json.dumps(searchResult_dict)
     # print(searchResult_return)
 
-    allresult = UserList.objects.all()
     if searchBody['name'] and searchBody['name'] != '':
-        filterresult = allresult.filter(name=searchBody['name'])
+        filterresult = UserList.objects.filter(name=searchBody['name'])
     else:
-        filterresult = allresult
+        filterresult = UserList.objects.all()
     if searchBody['phone'] and searchBody['phone'] != '':
         filterresult = filterresult.filter(phone=searchBody['phone'])
     else:
