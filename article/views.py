@@ -9,6 +9,6 @@ def uploadPic(request):
     with open(file_path, 'wb') as f:
         for chunk in file_obj.chunks():
             f.write(chunk)
-    return HttpResponse(file_path)
+    return HttpResponse(file_obj.name)
 
 # Create your views here.
