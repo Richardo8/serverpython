@@ -18,6 +18,7 @@ from django.contrib import admin
 from learn import views as learn_views
 from calc import views as calc_views
 from userlist import views as userlist_views
+from article import views as article_views
 
 urlpatterns = [
     url(r'^$', calc_views.index, name='home'),
@@ -26,5 +27,5 @@ urlpatterns = [
     url(r'^addOptimize/(\d+)/(\d+)/$', calc_views.addOptimize, name='addOptimize'),
     url(r'^userlist', userlist_views.getAllUser, name='readfile'),
     url(r'^search', userlist_views.search, name='search'),
-
+    url(r'^upload', article_views.uploadPic, name='upload')
 ]
